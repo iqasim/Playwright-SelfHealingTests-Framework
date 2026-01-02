@@ -1,0 +1,21 @@
+
+# Screenshots
+***.png**
+***.jpg**
+# Playwright report and results folders
+**playwright-reports/**
+**playwright-report/**
+**test-results/**
+#node modules
+**node_modules/**
+node_modules
+
+# .env file
+***.env**
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
