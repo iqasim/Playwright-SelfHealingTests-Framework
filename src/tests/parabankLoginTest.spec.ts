@@ -6,7 +6,7 @@ test.describe("Test Login Functionality with AI self healing", () => {
 
     test(
       "TC01 This test is designed to test successful AI self healing",
-      { tag: ["@AISelfHealing"] },
+      { tag: ["@AISelfHealing", "@SmokeTest"] },
       async ({ parabankloginPage }) => {
         await test.step("Naviage to the portal", async () => {
               await parabankloginPage.navigateToPortal();
@@ -28,7 +28,7 @@ test.describe("Test Login Functionality with AI self healing", () => {
 
     test(
       "TC02 This test is designed to test failed login",
-      { tag: ["@AISelfHealing"] },
+      { tag: ["@AISelfHealing", "@SmokeTest"] },
       async ({ parabankloginPage }) => {
         await test.step("Naviage to the portal", async () => {
           await parabankloginPage.navigateToPortal();

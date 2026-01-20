@@ -10,7 +10,6 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    # This links the job to your GitHub Environment
     environment: Parabank Environment 
 
     steps:
@@ -25,7 +24,6 @@ jobs:
 
     - name: Run Playwright tests
       env:
-        # Mapping your secrets and variables to process.env
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         PARABANK_INVALIDUSERNAME: ${{ vars.PARABANK_INVALIDUSERNAME }}
         PARABANK_PASSWORD: ${{ secrets.PARABANK_PASSWORD }}
