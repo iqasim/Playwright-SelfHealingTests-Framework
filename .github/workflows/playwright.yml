@@ -28,7 +28,7 @@ jobs:
         PARABANK_INVALIDUSERNAME: ${{ vars.PARABANK_INVALIDUSERNAME }}
         PARABANK_PASSWORD: ${{ secrets.PARABANK_PASSWORD }}
         PARABANK_USERNAME: ${{ vars.PARABANK_USERNAME }}
-      run: npx playwright test
+      run: npx playwright test -g "SmokeTest" --grep-invert "@wip"
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

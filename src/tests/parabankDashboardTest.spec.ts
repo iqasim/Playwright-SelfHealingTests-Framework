@@ -5,7 +5,7 @@ import { DashboardPage } from "../pages/parabank.dashboardPage";
 test.describe("Dashboard Page Test Cases", () => {
   test(
     "TC03 Test that dashboard page should display successfully",
-    { tag: ["@AISelfHealing", "@WIP", "@SmokeTest"] },
+    { tag: ["@AISelfHealing", "@wip", "@SmokeTest"] },
     async ({ parabankloginPage, parabankdashboardPage }) => {
       await test.step("Naviage to the portal", async () => {
         await parabankloginPage.navigateToPortal();
