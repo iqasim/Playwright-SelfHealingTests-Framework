@@ -1,13 +1,9 @@
-name: Playwright Tests
-on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    environment: Parabank Environment 
+    
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -17,11 +13,11 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+      
     - name: Run Playwright tests
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        PARABANK_INVALIDUSERNAME: ${{ vars.PARABANK_INVALIDUSERNAME }}
+        PARABANK_PASSWORD: ${{ secrets.PARABANK_PASSWORD }}
+        PARABANK_USERNAME: ${{ vars.PARABANK_USERNAME }}
       run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-report
-        path: playwright-report/
-        retention-days: 30
